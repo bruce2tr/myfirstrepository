@@ -1,0 +1,15 @@
+a {
+font-size: 30px;
+}
+
+a:hover {
+background-color: olive;
+}
+
+a:active {
+background-color: navy;
+}
+
+a:focus {
+background-color: violet;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Bootstrap Demo</title>
+
+  <!-- bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <!-- new example  -->
+<div class="container">
+
+<div class="row">
+    <h5 class="card-title">About Me</h5>
+    <div class="col-md-8">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img class="card-img-top"src="data:image/jpeg;base64,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">
+          
+          <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <!-- <a href="#" class="card-link">Card link</a> -->
+          <!-- <a href="#" class="card-link">Another link</a> -->
+        </div>
+      </div>
+    </div>
+  <div class="card">
+    <card class="title">
+      Test Text 
+    </card>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-8">
+
+  </div>
+</div>
+
+</div>
+
+
+<!-- last example -->
+  <div class="container">
+    <h1>Header</h1>
+    <!-- Row 1 -->
+    <div class="row">
+      <div class="col-md-3">
+        <p>
+          Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum condimentum, donec justo litora
+          habitasse non blandit molestie dictum posuere leo eget vitae, accumsan imperdiet diam odio suspendisse vel
+          justo vivamus cubilia nulla.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <p>
+          Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum condimentum, donec justo litora
+          habitasse non blandit molestie dictum posuere leo eget vitae, accumsan imperdiet diam odio suspendisse vel
+          justo vivamus cubilia nulla.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <p>
+          Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum condimentum, donec justo litora
+          habitasse non blandit molestie dictum posuere leo eget vitae, accumsan imperdiet diam odio suspendisse vel
+          justo vivamus cubilia nulla.
+        </p>
+      </div>
+
+    </div>
+    <!-- Row 2 -->
+    <div class="row">
+      <div class="col-md-2">
+        <p>Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum condimentum, donec justo litora
+          habitasse non </p>
+
+      </div>
+      <div class="col-md-2">
+        <p>Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum </p>
+
+      </div>
+      <div class="col-md-2">
+        <p>Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum </p>
+
+      </div>
+      <div class="col-md-2">
+        <p>Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum </p>
+
+      </div>
+      <div class="col-md-2">
+        <p>Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum </p>
+
+      </div>
+      <div class="col-md-2">
+        <p>Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum </p>
+
+      </div>
+
+    </div>
+    <!-- Row 3 -->
+    <div class="row">
+      <div class="col-md-6">
+        <p>
+          Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum condimentum, donec justo litora
+          habitasse non blandit molestie dictum posuere leo eget vitae, accumsan imperdiet diam odio suspendisse vel
+          justo vivamus cubilia nulla.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <p>
+          Lorem ipsum risus lacus et ipsum bibendum ultricies felis laoreet dictum condimentum, donec justo litora
+          habitasse non blandit molestie dictum posuere leo eget vitae, accumsan imperdiet diam odio suspendisse vel
+          justo vivamus cubilia nulla.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+</body>
