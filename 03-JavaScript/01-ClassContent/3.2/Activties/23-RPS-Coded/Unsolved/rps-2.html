@@ -11,15 +11,21 @@
 
   <div id="game">
 
+
+
   </div>
 
   <script type="text/javascript">
 
     // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
     var computerChoices = ["r", "p", "s"];
+    var winsAndLoses = [0, 0, 0];
+
+
+    document.write("Choose ROCK, PAPER or SCISSORS by typing r, p or s!");
 
     // This function is run whenever the user presses a key.
-    document.onkeyup = function(event) {
+    document.onkeyup = function (event) {
 
       // Determines which key was pressed.
       var userGuess = event.key;
@@ -27,13 +33,78 @@
       // Randomly chooses a choice from the options array. This is the Computer's guess.
       var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
+
       // Alerts the key the user pressed (userGuess).
       alert("User guess: " + userGuess);
 
       // Alerts the Computer's guess.
       alert("Computer guess: " + computerGuess);
 
-    };
+      // if (userGuess !== "r" || "p" || "s"){
+      //   alert("Pick again!");
+      // }
+
+      if (userGuess === "r" && computerGuess === "s") {
+        //user wins
+        winsAndLoses[0]++;
+        console.log(winsAndLoses[0]);
+        console.log(winsAndLoses[1]);
+        console.log(winsAndLoses[2]);
+      }
+
+      else if (userGuess === "r" && computerGuess === "p") {
+        //computer wins
+        winsAndLoses[1]++;
+        console.log(winsAndLoses[0]);
+        console.log(winsAndLoses[1]);
+        console.log(winsAndLoses[2]);
+      }
+
+      else if (userGuess === "s" && computerGuess === "r") {
+        //computer wins
+        winsAndLoses[1]++;
+        console.log(winsAndLoses[0]);
+        console.log(winsAndLoses[1]);
+        console.log(winsAndLoses[2]);
+      }
+      else if (userGuess === "s" && computerGuess === "p") {
+        //user wins
+        winsAndLoses[0]++;
+        console.log(winsAndLoses[0]);
+        console.log(winsAndLoses[1]);
+        console.log(winsAndLoses[2]);
+      }
+      else if (userGuess === "p" && computerGuess === "r") {
+        //user wins
+        winsAndLoses[0]++;
+        console.log(winsAndLoses[0]);
+        console.log(winsAndLoses[1]);
+        console.log(winsAndLoses[2]);
+      }
+      else if (userGuess === "p" && computerGuess === "s") {
+        //computer wins
+        winsAndLoses[1]++;
+        console.log(winsAndLoses[0]);
+        console.log(winsAndLoses[1]);
+        console.log(winsAndLoses[2]);
+      }
+      else if (userGuess === computerGuess) {
+        winsAndLoses[2]++;
+        console.log(winsAndLoses[0]);
+        console.log(winsAndLoses[1]);
+        console.log(winsAndLoses[2]);
+      }
+
+      alert("You chose: " + userGuess);
+      alert("Computer chose: " + computerGuess);
+      alert("Wins: " + winsAndLoses[0]);
+      alert("Loses: " + winsAndLoses[1]);
+      alert("Ties " + winsAndLoses[2]);
+
+
+    }
+
+
   </script>
 
 </body>
