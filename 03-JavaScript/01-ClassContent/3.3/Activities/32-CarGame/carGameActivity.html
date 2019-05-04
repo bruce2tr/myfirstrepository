@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My First Object</title>
+</head>
+
+<body>
+
+  <script>
+
+    var car = {
+      make: "Honda",
+      model: "Fit",
+      color: "Blue Raspberry",
+      mileage: 3000,
+      isWorking: true,
+
+      driveToWork: function () {
+
+        alert("Old Mileage: " + this.mileage);
+
+        this.mileage = this.mileage + 8;
+
+        alert("New mileage: " + this.mileage);
+      },
+
+      driveAroundWorld: function () {
+
+        alert("Old Mileage: " + this.mileage);
+
+        this.mileage = this.mileage + 24000;
+
+        alert("New Mileage: " + this.mileage);
+        alert("Car needs a tuneup!");
+
+        this.isWorking = false;
+      },
+
+      getTuneUp: function () {
+        alert("Car is ready to go!");
+        this.isWorking = true;
+      },
+
+      honk: function () {
+        alert("Honk! Honk!");
+      }
+
+    };
+
+    var reWriteStats = function () {
+      console.log("The car make is " + car.make + ".");
+      console.log("The car model is " + car.model + ".");
+      console.log("The car color is " + car.color + ".");
+      console.log("The car mileage is " + car.mileage + ".");
+      console.log("The car's condition is " + car.isWorking + ".");
+      console.log("---------------------------");
+    }
+
+
+    document.onkeyup = function (event) {
+
+      // Determines which key was pressed.
+      var userGuess = event.key;
+
+      if (userGuess === "d") {
+        car.driveToWork();
+        reWriteStats();
+      }
+      else if (userGuess === "a") {
+
+        car.driveAroundWorld();
+        reWriteStats();
+      }
+
+      else if (userGuess === "t") {
+
+        car.getTuneUp();
+        reWriteStats();
+      }
+      else if (userGuess === "h") {
+        car.honk();
+        reWriteStats();
+      }
+      else {
+        console.log("User did not enter valid letter!");
+      }
+    }
+    // How would we log...
+
+
+    // // The car's make?
+    // console.log(car.make);
+
+    // // The car's model?
+    // console.log(car["model"])
+
+    // // The car's mileage?
+    // console.log(car["mileage"])
+    // // How would we run the car's driveToWork method?
+
+    // car.driveToWork();
+
+    // // How would we run the car's driveAroundWorld method?
+    // car.driveAroundWorld();
+
+    // // How would we run the getTuneUp method?
+    // car.getTuneUp();
+
+  </script>
+
+
+  <H1>Push 'd' to drive work, push 'a' to driver around the world, push 't' to get a tune-up and press 'h' to honk!</H1>
+
+</body>
+
+</html>

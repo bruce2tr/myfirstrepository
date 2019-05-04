@@ -16,15 +16,48 @@
       // Create a Function called "adder" that take three arguments (x, y, z).
       // The function should add the arguments together, and log the result to the console.
 
+function adder (x,y,z){
+
+var sum = x+y+z;
+
+
+console.log(sum);
+
+}
 
       // Create a Function called "multiplier" that takes three arguments (x, y, z).
       // The function should multiply the arguments, and log the result to the console.
 
+function multiplier (x,y,z){
 
+  var product = x*y*z;
+  console.log(product);
+}
       // Create a Function called "isString" that takes three arguments (x, y, z).
       // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
 
+function isString (x,y,z){
 
+  if (typeof x == "string"){
+    console.log("X is a string");
+  }
+  else {
+    console.log("X is not a string")
+  }
+  if (typeof y == "string"){
+    console.log("Y is a string");
+  }
+  else {
+    console.log("Y is not a string")
+  }
+  if (typeof z == "string"){
+    console.log("Z is a string");
+  }
+  else {
+    console.log("Z is not a string")
+  }
+
+}
       // Create a Function called "vowelChecker" that takes in a single argument (x).
       // "vowlChecker" logs whether or not the input is a vowel.
 
