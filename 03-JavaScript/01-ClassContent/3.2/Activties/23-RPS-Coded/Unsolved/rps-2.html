@@ -10,7 +10,9 @@
 <body>
 
   <div id="game">
-
+<p id="directions">Choose ROCK, PAPER or SCISSORS by typing r, p or s!</p>
+<p id="userchoice"></p>
+<p id="computerchoice"></p>
 
 
   </div>
@@ -22,7 +24,7 @@
     var winsAndLoses = [0, 0, 0];
 
 
-    document.write("Choose ROCK, PAPER or SCISSORS by typing r, p or s!");
+    // document.write("Choose ROCK, PAPER or SCISSORS by typing r, p or s!");
 
     // This function is run whenever the user presses a key.
     document.onkeyup = function (event) {
@@ -95,11 +97,11 @@
         console.log(winsAndLoses[2]);
       }
 
-      alert("You chose: " + userGuess);
-      alert("Computer chose: " + computerGuess);
-      alert("Wins: " + winsAndLoses[0]);
-      alert("Loses: " + winsAndLoses[1]);
-      alert("Ties " + winsAndLoses[2]);
+      // alert("You chose: " + userGuess);
+      // alert("Computer chose: " + computerGuess);
+      // alert("Wins: " + winsAndLoses[0]);
+      // alert("Loses: " + winsAndLoses[1]);
+      // alert("Ties: " + winsAndLoses[2]);
 
 
     }
