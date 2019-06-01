@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=new+york+times&page=2&sort=oldest&api-key=Yvp6xJj3vihOgavOvJIyI596XDAgikQ4"
+        
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            var results = response.response;
+            console.log(response);
+            console.log(results.docs[0].headline.main);
+        });
+    </script>
+</body>
+
+</html>
