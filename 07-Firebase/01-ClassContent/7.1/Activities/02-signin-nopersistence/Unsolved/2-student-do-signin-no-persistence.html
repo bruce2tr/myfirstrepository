@@ -111,15 +111,27 @@ $("#comment-display").text(comment);
 
 localStorage.clear();
 
-localStorage.setItem("name", name);
-localStorage.setItem("email", email);
-localStorage.setItem("age", age);
-localStorage.setItem("comment", comment);
+// localStorage.setItem("name", name);
+// localStorage.setItem("email", email);
+// localStorage.setItem("age", age);
+// localStorage.setItem("comment", comment);
 
-$("#name-display").text(localStorage.getItem("name"));
-$("email-display").text(localStorage.getItem("email"));
-$("age-display").text(localStorage.getItem("age"));
-$("comment-display").text(localStorage.getItem("comment"));
+// $("#name-display").text(localStorage.getItem("name"));
+// $("email-display").text(localStorage.getItem("email"));
+// $("age-display").text(localStorage.getItem("age"));
+// $("comment-display").text(localStorage.getItem("comment"));
+
+sessionStorage.clear();
+
+sessionStorage.setItem("name", name);
+sessionStorage.setItem("email", email);
+sessionStorage.setItem("age", age);
+sessionStorage.setItem("comment", comment);
+
+$("#name-display").text(seessionStorage.getItem("name"));
+$("email-display").text(sessionStorage.getItem("email"));
+$("age-display").text(sessionStorage.getItem("age"));
+$("comment-display").text(sessionStorage.getItem("comment"));
 
     });
 
