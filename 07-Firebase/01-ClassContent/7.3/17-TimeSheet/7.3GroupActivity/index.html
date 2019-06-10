@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Sirin+Stencil|Stint+Ultra+Condensed|Vast+Shadow&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
+    <title>Train Schedule</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <br>
+            <div class="jumbotron text-center bg-dark">
+                <h1 class="display-4 text-light">Employee Data Management</h1>
+                <h3 class="text-light">A Comprehensive Directory of Employee Billable Hours</h3>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-title">
+                            <h4>Current Employees</h4>
+                        </div>
+                        <div class="card-text">
+                            <table class="table">
+                                <tr id="employee-title-row">
+                                    <th scope="col">Employee Name</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">Months Worked</th>
+                                    <th scope="col">Monthly Rate ($)</th>
+                                    <th scope="col">Total Billed ($)</th>
+                                </tr>
+                                <tr>
+
+                                    <td id="employee-name-row"></td>
+                                    <td id="role-row"></td>
+                                    <td id="start-date-row"></td>
+                                    <td id="months-worked-row"></td>
+                                    <td id="month-rate-row"></td>
+                                    <td id="total-bill-row"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class=card>
+                        <div class="card-title">
+                            <h4>Add Employee</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group row">
+                                    <label for="employee-name">Employee Name</label>
+                                    <input class="form-control" id="employee-name" type="text">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="role">Role</label>
+                                    <input class="form-control" id="role" type="text">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="start-date">Start Date</label>
+                                    <input class="form-control" id="start-date" type="text">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="month-rate">Monthly Rate</label>
+                                    <input class="form-control" id="month-rate" type="number">
+                                </div>
+                                <button class="btn btn-outline-info" id="submit-input" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyDOKQsU-noKKBuP6m08prgWFcfV2vuEzHk",
+                authDomain: "group-project-4eef7.firebaseapp.com",
+                databaseURL: "https://group-project-4eef7.firebaseio.com",
+                projectId: "group-project-4eef7",
+                storageBucket: "",
+                messagingSenderId: "1094423904548",
+                appId: "1:1094423904548:web:9e6b7ee5799be221"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+
+            var name = "";
+            var role = "";
+            var date = 0;
+            var rate = 0;
+
+            var database = firebase.database();
+            $("#submit-input").on("click", function (event) {
+                event.preventDefault();
+                $("#employee-name-row").empty();
+                $("#role-row").empty();
+                $("#start-date-row").empty();
+                $("#month-rate-row").empty();
+                name = $("#employee-name").val().trim();
+                role = $("#role").val().trim();
+                date = $("#start-date").val().trim();
+                rate = parseInt($("#month-rate").val().trim());
+                console.log(name);
+                console.log(role);
+                console.log(date);
+                console.log(rate);
+                var employee = {
+                    name: name,
+                    role: role,
+                    date: date,
+                    rate: rate,
+                };
+                database.ref().push(employee);
+                $("#employee-name-row").append(name);
+                $("#role-row").append(role);
+                $("#start-date-row").append(date);
+                $("#month-rate-row").append(rate);
+                console.log(database);
+
+            })
+
+            var empStartDate = moment.unix(date).format("MM/DD/YYY");
+            var empMonths = moment().diff(moment(date, "X"), "months");
+            console.log(empStartDate);
+
+            database.ref().on("child_added", function (snapshot) {
+                // if(snapshot.child("name").exists()&&snapshot.child("role").exists()&&snapshot.child("date").exists()&&snapshot.child("rate").exists()){
+                // $("#employee-name-row").text(name);
+                // $("#role-row").text(role);
+                // $("#start-date-row").text(date);
+                // $("#month-rate-row").text(rate);
+                // }
+                console.log(snapshot.val());
+            },
+                function (errorObject) {
+                    console.log("This is the failed" + errorObject.code);
+                });
+        </script>
+</body>
+
+</html>

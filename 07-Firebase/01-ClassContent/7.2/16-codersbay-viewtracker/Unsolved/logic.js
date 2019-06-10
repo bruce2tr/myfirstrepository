@@ -4,11 +4,13 @@
 // Make sure to match the configuration to the script version number in the HTML
 // (Ex. 3.0 != 3.7.0)
 var config = {
-  apiKey: "AIzaSyDxQqkGa3AKrcGmGVFalJe40g4hdzADf6w",
-  authDomain: "coder-bay-views.firebaseapp.com",
-  databaseURL: "https://coder-bay-views.firebaseio.com",
-  storageBucket: "coder-bay-views.appspot.com",
-  messagingSenderId: "17945436261"
+  apiKey: "AIzaSyCuCdF559ER8qOf54DIuSZMwA_i3JXyS-w",
+  authDomain: "project-with-toby.firebaseapp.com",
+  databaseURL: "https://project-with-toby.firebaseio.com",
+  projectId: "project-with-toby",
+  storageBucket: "project-with-toby.appspot.com",
+  messagingSenderId: "351579685345",
+  appId: "1:351579685345:web:ff6bf6ee2db717d4"
 };
 
 firebase.initializeApp(config);
@@ -19,7 +21,7 @@ var database = firebase.database();
 
 // --------------------------------------------------------------
 // Link to Firebase Database for viewer tracking
-
+var connectionsRef = database.ref("/connections");
 
 // --------------------------------------------------------------
 // Initial Values
@@ -31,6 +33,8 @@ var highBidder = initialBidder;
 // --------------------------------------------------------------
 
 // Add ourselves to presence list when online.
+
+
 
 
 // Number of online users is the number of objects in the presence list.

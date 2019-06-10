@@ -48,6 +48,9 @@ var config = {
     $("#click-button").on("click", function() {
       clickCounter++;
 
+
+      //Store click Data to Firebase in a JSON property called clickCount
+      //note we are using the Firebaase .set() method
       database.ref().set({
         clickCount: clickCounter
       });
@@ -56,6 +59,9 @@ var config = {
     // MAIN PROCESS + INITIAL CODE
     // --------------------------------------------------------------------------------
 
+    //Using the .on("value", function(snapshot)) syntax will retrieve the data 
+    //from the database (both initially and every time something changes)
+    //This will then store the data inside the variable "snapshot". We could renaame "snapshot" to anything 
     database.ref().on("value", function(snapshot) {
       console.log(snapshot.val());
 
