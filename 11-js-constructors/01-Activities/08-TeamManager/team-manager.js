@@ -15,3 +15,5 @@ function Player(name, position, offense, defense){
 
 }
 
+function askQuestion
+
