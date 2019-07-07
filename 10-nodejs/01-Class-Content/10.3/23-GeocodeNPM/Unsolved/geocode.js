@@ -15,7 +15,7 @@ var NodeGeocoder = require("node-geocoder");
 // Replace with your mapquest consumer API key
 var options = {
   provider: "mapquest",
-  apiKey: "YOUR-MAPQUEST-API-CONSUMER-KEY"
+  apiKey: "OpjTIIflJX1D7CV6R6uFoSOaAkiCo3I"
 };
 
 // Create a geocoder object that can query the mapquest API
@@ -25,10 +25,14 @@ var geocoder = NodeGeocoder(options);
 
 // Take in the command line arguments
 
-
+var city = process.argv[2];
+var state = process.argv[3];
 
 // Build your address as an array or string
 
-
+var address = city + " " + state;
 
 // Then use the geocoder object to search the address
+geocoder.geocode(address, function(err, data) {
+  console.log(JSON.stringify(data, null, 2));
+});

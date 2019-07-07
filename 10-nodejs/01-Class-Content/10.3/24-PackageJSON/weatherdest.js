@@ -12,7 +12,7 @@ var weather = require("weather-js");
 // Replace with your mapquest consumer API key
 var options = {
   provider: "mapquest",
-  apiKey: "YOUR-MAPQUEST-API-CONSUMER-KEY"
+  apiKey: "YOpjTIIflJX1D7CV6R6uFoSOaAkiCo3I"
 };
 
 var geocoder = NodeGeocoder(options);
