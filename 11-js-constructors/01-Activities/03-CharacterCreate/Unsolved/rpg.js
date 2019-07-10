@@ -2,7 +2,8 @@
 
 //   * Name: The character's name --> String
 
-function Character(profession, gender, age, strength, hp) {
+function Character(name, profession, gender, age, strength, hp) {
+  this.name = name; 
   this.profession = profession;
   this.gender = gender;
   this.age = age;
@@ -11,6 +12,8 @@ function Character(profession, gender, age, strength, hp) {
   this.printStats = function() {
    console.log(this);
     console.log(
+      "Name: " + 
+      this.name +
       "Profession: " +
         this.profession +
         "\nGender: " +
@@ -59,8 +62,8 @@ function Character(profession, gender, age, strength, hp) {
 //   * PrintStats: Function which prints all of a character's properties to the screen
 
 //   * Once you have created your constructor, create two new characters and print their properties to the screen
-var bob = new Character("Boss", "Male", 32, 2, 10);
-var sue = new Character("Queen", "Female", 29, 1, 15);
+var bob = new Character("Bob", "Boss", "Male", 32, 2, 10);
+var sue = new Character("Sue", "Queen", "Female", 29, 1, 15);
 
 // bob.printStats();
 // sue.printStats();

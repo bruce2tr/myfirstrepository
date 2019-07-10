@@ -72,9 +72,12 @@ inquirer
       ) {
         console.log("Try drinking more water!");
       } else {
-          //may want to use data. split 
+          //may want to use data. split (can't use split because im in an array)
           console.log(inquirerResponse);
           var containers = "";
+
+          //look into array.join() - returns a string
+          //containers = inquirerResponse.checkbox.join()
           for (var i = 0; i < inquirerResponse.checkbox.length; i++){
             containers += inquirerResponse.checkbox[i] + " ";
 
